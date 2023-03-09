@@ -1,0 +1,24 @@
+<%- include("header") -%>
+
+<div class="box">
+  <form class="dddd" action="/register" method="post">
+    <input
+      type="text"
+      name="uN"
+      placeholder="user Id"
+      autocomplete="off"
+      minlength="4"
+      maxlength="14"
+    />
+    <input
+      type="text"
+      name="pass"
+      placeholder="Password"
+      autocomplete="off"
+      minlength="8"
+      maxlength="16"
+    />
+    <button class="signup" type="submit" name="register">signup</button>
+  </form>
+</div>
+<%- include("footer") -%>

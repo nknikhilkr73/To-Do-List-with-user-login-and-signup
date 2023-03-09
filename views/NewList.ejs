@@ -1,0 +1,35 @@
+<%- include("header") -%>
+
+   
+
+<div class="main">
+  <div class="headingItem" >
+    
+    <h3 style="color: antiquewhite;"><span>User : </span> <%= userID %></h3>
+</div>
+  <div class="headingItem" id="heading">
+    <h1> <%= listTitle %></h1>
+</div>
+<div class="box">
+  
+      <%for (var i=0;i<newListItems.length;i++){ %>
+
+        <form action="/delete" method="post">
+        <div class="item">
+            <input type="checkbox" name="checkbox" value="<%= newListItems[i]._id %>" onchange="this.form.submit()">
+            <p><%= newListItems[i].name %></p>
+        </div> 
+      </form>
+      <%}%>
+    
+    <form class="item" id="f" action="/" method="post"> 
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off" maxlength="37" oninput="this.value = this.value.toLowerCase().replace(/\b\w/g, function(c) { return c.toUpperCase(); })"
+      />
+      <button class="add" type="submit" name="list" value=<%= listTitle %>>+</button>
+    </form>
+</div>
+<form action="/logout" method="post">
+<button class="signup" type="submit">Logout</button>
+</form>
+</div>
+<%- include("footer") -%>
